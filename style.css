@@ -40,6 +40,18 @@ body {
     
 }
 
+.artie img {
+    display: none;
+}
+
+.artie:hover img {
+    display: block;
+    position: absolute;
+    top: calc(-100% - 20px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* .artie:hover {
     background:
         url("assets/artie-3q.png") no-repeat left;
@@ -173,6 +185,7 @@ body {
     font-size: .875em;
     line-height: 1.5;
     margin-bottom: 1.5em;
+    position: relative;
     width: 80em;
 }
 
@@ -209,7 +222,7 @@ li {
    margin: 20px;
 }
 
-a {
+a, .faux-link {
     color: slategray;
     text-decoration: none;
     border: 1px bottom slategray;
@@ -217,16 +230,16 @@ a {
 
 }
 
-a:hover{
-      color:  #d0554a;
-      border-color:  #d0554a
-    }
+a:hover, .faux-link:hover {
+    color:  #d0554a;
+    border-color:  #d0554a;
+}
 
-    a:focus {
-        background-color: #d0554a;
-        color: white;
-        outline: none;
-     }
+a:focus {
+    background-color: #d0554a;
+    color: white;
+    outline: none;
+}
 
 /* MEDIA QUERIES */
 
@@ -260,7 +273,11 @@ a:hover{
         z-index: 0;
         clip-path: circle(100%);
         }
-}
+
+
+        .artie:hover img {
+            top: calc(100% + 20px);
+        }    }
 
 
 
