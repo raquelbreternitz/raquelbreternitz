@@ -5,14 +5,16 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    letter-spacing: .02em;
+    letter-spacing: .01em;
     color: #111111;
 }
 
 .container {
-    width: 650px;
-    padding: 40px;
+    position: relative;
+    width: 50em;
+    padding: 0 40px 40px 40px;
     margin: 0px auto;
+    top: -50px;
 }
 
 .header-bar {
@@ -21,22 +23,53 @@ body {
     background-color: #fcdb1e;
 }
 
+.bio-block {
+    align-items: baseline;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.illo {
+    height: 200px;
+    padding: 0 20px 20px 0;
+    z-index: -1;
+    
+}
+
+/* .artie:hover {
+    background:
+        url("assets/artie-3q.png") no-repeat left;
+        padding: 50px;
+    position: absolute;
+    top: 350px;
+    z-index: 1;
+} */
+
 /* GEOMETRIC */
 
 .geo-container {
     position: relative;
+    display: inline;
+}
+
+.geo {
+    position: relative;
     margin: auto;
-    top: 320px;
-    left: -300px;
+    top: 240px;
+    left: -380px;
     height: 100px;
     width: 300px;
     display: block;
-    z-index: -1;
+    transition: 300ms ease-in all;
 }
 
 .horizontal-line {
     position: absolute;
-    width: 800px;
+    width: 900px;
     height: 2px;
     top: 10%;
     left: 5%;
@@ -105,7 +138,7 @@ body {
     font-family: 'GT Sectra', Georgia, serif;;
     font-size: 5em;
     line-height: .8;
-    margin-bottom: 2em;
+    margin-bottom: .5em;
 }
 
 .lastname {
@@ -113,37 +146,54 @@ body {
 }
 
 .subtitle {
+    color:  #d0554a;
     font-family: 'Karla',Helvetica, sans-serif;
     font-size: 1em;
     font-weight: 700;
     letter-spacing: .05em;
     text-transform: uppercase;
     margin-bottom: 2em;
-    width: 200px;
+    width: 10em;
+    padding-right: .25em;
+    z-index: 1;
 }
 
-.main {
+.main-1 {
+    font-family: 'Karla', Helvetica, sans-serif;
+    font-size: 1em;
+    color: slategray;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    width: 40em;
+    padding-right: 20px;
+}
+
+.main-2 {
     font-family: 'Libre Baskerville', Georgia, serif;
     font-size: .875em;
     line-height: 1.5;
     margin-bottom: 1.5em;
-    width: 440px;
+    width: 80em;
 }
 
   /*LINKS*/
 
 .links {
-    font-family: 'Karla', Helvetica, sans-serif;
-    font-size: .825em;
-    letter-spacing: .05em;
-    display: flex;
-    padding: 0 0 10px 0;
+    padding: 0 0 10px 220px;
     margin-bottom: .25em;
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
 }
 
 .link {
+    font-family: 'Karla', Helvetica, sans-serif;
+    font-size: .825em;
+    letter-spacing: .05em;
     margin-right: 20px;
-    border-bottom: 1px solid #767676;
     line-height: 1.4;
     transition: ease-in 200ms;
 }
@@ -160,17 +210,62 @@ li {
 }
 
 a {
-    color: #767676;
+    color: slategray;
     text-decoration: none;
-    border-bottom: 1px solid #767676;
-    line-height: 1.4;
+    border: 1px bottom slategray;
+    transition: 200ms ease-in all;
+
 }
 
-a:hover, a:focus {
-      color: #111111;
-      line-height: 1.4;
-      border-color: #111111
+a:hover{
+      color:  #d0554a;
+      border-color:  #d0554a
     }
+
+    a:focus {
+        background-color: #d0554a;
+        color: white;
+        outline: none;
+     }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 800px) {
+
+
+    .subtitle {
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .bio-block {
+        display: block;
+    }
+
+    .links {
+        padding-left: 0;
+        display: block;
+    }
+
+    .main-1, .main-2 {
+        width: 400px;
+    }
+
+    .geo {
+        position: relative;
+        left: -180px;
+        z-index: 0;
+        clip-path: circle(100%);
+        }
+}
+
+
+
+
+
 
 /* RESET CSS */
 
@@ -207,6 +302,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -218,6 +314,7 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
