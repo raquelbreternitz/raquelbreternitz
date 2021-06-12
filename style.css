@@ -44,6 +44,7 @@ body {
 
 .artie img {
     display: none;
+    width: 11em;
 }
 
 .artie:hover img, .artie:focus img {
@@ -275,8 +276,8 @@ a:focus, .faux-link:focus {
         }
 
 
-        .artie:hover img {
-            top: calc(100% + 20px);
+        .artie:hover img, .artie:focus img {
+            top: calc(100% + 1.25em);
         }    }
 
 
