@@ -2,12 +2,9 @@
 /* COMPOSITION */
 
 body {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: .875em;
     margin: 0;
     padding: 0;
     font-size: 16px;
-    letter-spacing: .01em;
     color: #111111;
 }
 
@@ -55,14 +52,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* .artie:hover {
-    background:
-        url("assets/artie-3q.png") no-repeat left;
-        padding: 50px;
-    position: absolute;
-    top: 350px;
-    z-index: 1;
-} */
 
 /* GEOMETRIC */
 
@@ -136,6 +125,7 @@ body {
     src: url("assets/GT-Sectra-Fine-Bold.woff");
   }
 
+
 .page-title {
     font-size: .75em;
     font-family: 'Karla',Helvetica, sans-serif;
@@ -150,7 +140,7 @@ body {
 }
 
 .raquel-b {
-    font-family: 'GT Sectra', Georgia, serif;;
+    font-family: 'GT Sectra', Georgia, serif;
     font-size: 5em;
     line-height: .8;
     margin-bottom: .5em;
@@ -184,7 +174,11 @@ body {
 }
 
 .main-2 {
-    line-height: 1.5;
+    font-family: freight-text-pro, Georgia, 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size:  1.1em;
+    font-weight: 400;
+    line-height: 1.4;
     margin-bottom: 1.5em;
     position: relative;
     width: 80em;
