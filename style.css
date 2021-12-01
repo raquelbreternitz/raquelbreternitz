@@ -1,11 +1,31 @@
 
+html {
+/*dark mode*/
+--dark_bg-clr: rgba(10,10,20, .95);
+--dark_text-clr: rgba(255,255,255, .8);
+--dark_bio-text-clr: rgba(205, 209, 231, 0.7);
+--dark_geo-clr: rgba(255, 217, 0, 0.9);
+--dark_link-clr: (205, 209, 231, 0.7);
+--dark_link-hvr-clr: #db7970;
+--dark_link-hvrtxt-clr: rgba(10,10,20, .95);
+
+/*light mode*/
+
+--light_bg-clr: #fff;
+--light_text-clr: #111111;
+--light_bio-text-clr: rgb(80, 85, 90);
+--light_geo-clr: #fcdb1e;
+--light_link-clr: #d0554a;
+--light_link-hvrtxt-clr: #fff;
+}
+
 /* COMPOSITION */
 
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    color: #111111;
+    color: var(--light_text-clr);
 }
 
 .container {
@@ -19,7 +39,7 @@ body {
 .header-bar {
     width: 100%;
     height: 1em;
-    background-color: #fcdb1e;
+    background-color: var(--light_geo-clr);
 }
 
 .bio-block {
@@ -78,7 +98,7 @@ body {
     top: 10%;
     left: 5%;
     background-color: transparent;
-    border-bottom: 1px solid #fcdb1e;
+    border-bottom: 1px solid var(--light_geo-clr);
     border-right: 1px solid transparent;
 }
 
@@ -89,7 +109,7 @@ body {
     top: 55%;
     left: -4.5%;
     background-color: transparent;
-    border-bottom: 1px solid #fcdb1e;
+    border-bottom: 1px solid var(--light_geo-clr);
     border-right: 1px solid transparent;
     transform: rotate(90deg);
 }
@@ -101,7 +121,7 @@ body {
     top: 80%;
     left: 27.5%;
     background-color: transparent;
-    border-bottom: 1px solid #fcdb1e;
+    border-bottom: 1px solid var(--light_geo-clr);
     border-right: 1px solid transparent;
     transform: rotate(45deg);
 }
@@ -113,7 +133,7 @@ body {
     top: 12%;
     left: 37%;
     background: transparent;
-    border: 1px solid #fcdb1e;
+    border: 1px solid var(--light_geo-clr);
     border-radius: 50%
 
 }
@@ -155,7 +175,7 @@ body {
 }
 
 .subtitle {
-    color:  #d0554a;
+    color:  var(--light_link-clr);
     font-family: 'Karla',Helvetica, sans-serif;
     font-size: 1em;
     font-weight: 700;
@@ -170,7 +190,7 @@ body {
 .main-1 {
     font-family: 'Karla', Helvetica, sans-serif;
     font-size: 1em;
-    color: slategray;
+    color: var(--light_bio-text-clr);
     line-height: 1.6;
     margin-bottom: 1.5em;
     width: 40em;
@@ -222,21 +242,20 @@ li {
 }
 
 a, .faux-link {
-    color: slategray;
+    color: var(--light_bio-text-clr);
     text-decoration: none;
-    border: 1px bottom slategray;
+    border: 1px bottom --light_bio-text-clr;
     transition: 200ms ease-in all;
-
 }
 
 a:hover, .faux-link:hover {
-    color:  #d0554a;
-    border-color:  #d0554a;
+    color:  var(--light_link-clr);
+    border-color:  var(--light_link-clr);
 }
 
 a:focus, .faux-link:focus {
-    background-color: #d0554a;
-    color: white;
+    background-color: var(--light_link-clr);
+    color: var(--light_link-hvrtxt-clr);
     outline: none;
 }
 
@@ -284,39 +303,39 @@ a:focus, .faux-link:focus {
 @media (prefers-color-scheme: dark) {
     /* defaults to dark theme */
     body { 
-      color: rgba(255,255,255, .8);
-      background-color: rgba(10,10,20, .95);
+      color: var(--dark_text-clr);
+      background-color: var(--dark_bg-clr);
     }
 
     .main-1 {
-        color: rgba(205, 209, 231, 0.7);
+        color: var(--dark_bio-text-clr);
     }
 
     a, .faux-link {
-        color: rgba(205, 209, 231, 0.7);
+        color: var(--dark_link-clr);
         text-decoration: none;
-        border: 1px bottom rgba(255, 255, 255, 0.6);
+        border: 1px bottom --dark_link-clr;
         transition: 200ms ease-in all;
     
     }
     
     a:hover, .faux-link:hover {
-        color:  #db7970;
-        border-color:  #db7970;
+        color:  var(--dark_link-hvr-clr);
+        border-color:  var(--dark_link-hvr-clr);
     }
 
     .subtitle {
-        color:  #db7970;
+        color:  var(--dark_link-hvr-clr);
     }
     
     a:focus, .faux-link:focus {
-        background-color: #db7970;
-        color: rgba(10,10,20, .95);
+        background-color: var(--dark_link-hvr-clr);
+        color: var(--dark_link-hvrtxt-clr) ;
         outline: none;
     }
 
     .header-bar {
-        background-color: rgba(255, 217, 0, 0.9);
+        background-color: var(--dark_geo-clr);
     }
 
     .illo {
@@ -326,11 +345,11 @@ a:focus, .faux-link:focus {
     /*geo*/
     
     .horizontal-line, vertical-line, .diagonal-line {
-        border-bottom: 1px solid rgba(255, 217, 0, 0.9);
+        border-bottom: 1px solid var(--dark_geo-clr);
     }
     
     .circle {  
-        border: 1px solid rgba(255, 217, 0, 0.9);
+        border: 1px solid var(--dark_geo-clr);
   }
 }
 
