@@ -1,31 +1,53 @@
 
-html {
-/*dark mode*/
---dark_bg-clr: rgba(10,10,20, .95);
---dark_text-clr: rgba(255,255,255, .8);
---dark_bio-text-clr: rgba(205, 209, 231, 0.7);
---dark_geo-clr: rgba(255, 217, 0, 0.9);
---dark_link-clr: (205, 209, 231, 0.7);
---dark_link-hvr-clr: #db7970;
---dark_link-hvrtxt-clr: rgba(10,10,20, .95);
+:root {
+    color-scheme: light dark; /* both supported */
+  }
 
-/*light mode*/
+body {
 
---light_bg-clr: #fff;
---light_text-clr: #111111;
---light_bio-text-clr: rgb(80, 85, 90);
---light_geo-clr: #fcdb1e;
---light_link-clr: #d0554a;
---light_link-hvrtxt-clr: #fff;
+/*color tokens*/
+--white: #fff;
+--black: #111111;
+--gray: rgb(80, 85, 90, .7);
+--red: #d0554a;
+--yellow: #fcdb1e;
+
+
+--bg-clr: var(--white);
+--text-clr: var(--black);
+--bio-text-clr: var(--gray);
+--subtitle-clr: var(--red);
+--geo-clr: var(--yellow);
+--link-clr:var(--red);
+--link-hvr-bg-clr: var(--red);
+--link-hvr-txt-clr: var(--white);
+
+--geo-border: 1px solid var(--geo-clr);
 }
 
-/* COMPOSITION */
+body.dark-mode {
+--white: rgba(255,255,255, .8);
+---black: rgba(10,10,20, .95);
+--gray: rgba(205, 209, 231, 0.7);
+--red: #db7970;
+--yellow: rgba(255, 217, 0, 0.9);
+
+--bg-clr: var(--black);
+--text-clr: var(--white);
+}
+
+/* COMPOSITION */ 
 
 body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    color: var(--light_text-clr);
+    color: var(--text-clr);
+    background-color: var(--bg-clr);
+}
+
+.toggle-theme {
+    margin: 1em 0;
 }
 
 .container {
@@ -33,14 +55,15 @@ body {
     width: 50em;
     padding: 0 40px 40px 40px;
     margin: 0px auto;
-    top: -50px;
+    top: -75px;
 }
 
 .header-bar {
     width: 100%;
     height: 1em;
-    background-color: var(--light_geo-clr);
+    background-color: var(--geo-clr);
 }
+
 
 .bio-block {
     align-items: baseline;
@@ -53,7 +76,7 @@ body {
 }
 
 .illo {
-    height: 200px;
+    height: 11.25em;
     padding: 0 20px 20px 0;
     z-index: -1;
     
@@ -91,15 +114,18 @@ body {
     transition: 300ms ease-in all;
 }
 
+.geo-lines {
+    background-color: transparent;
+    border-bottom: var(--geo-border);
+    border-right: 1px solid transparent;
+}
+
 .horizontal-line {
     position: absolute;
     width: 900px;
     height: 2px;
     top: 10%;
     left: 5%;
-    background-color: transparent;
-    border-bottom: 1px solid var(--light_geo-clr);
-    border-right: 1px solid transparent;
 }
 
 .vertical-line {
@@ -108,9 +134,6 @@ body {
     height: 2px;
     top: 55%;
     left: -4.5%;
-    background-color: transparent;
-    border-bottom: 1px solid var(--light_geo-clr);
-    border-right: 1px solid transparent;
     transform: rotate(90deg);
 }
 
@@ -120,9 +143,6 @@ body {
     height: 2px;
     top: 80%;
     left: 27.5%;
-    background-color: transparent;
-    border-bottom: 1px solid var(--light_geo-clr);
-    border-right: 1px solid transparent;
     transform: rotate(45deg);
 }
 
@@ -133,9 +153,8 @@ body {
     top: 12%;
     left: 37%;
     background: transparent;
-    border: 1px solid var(--light_geo-clr);
+    border: var(--geo-border);
     border-radius: 50%
-
 }
 
 /* TYPOGRAPHY */
@@ -151,7 +170,7 @@ body {
     font-family: 'Karla',Helvetica, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 3em;
+    /*margin-bottom: 3em;*/
 }
 
 .page-title::before {
@@ -175,7 +194,7 @@ body {
 }
 
 .subtitle {
-    color:  var(--light_link-clr);
+    color:  var(--subtitle-clr);
     font-family: 'Karla',Helvetica, sans-serif;
     font-size: 1em;
     font-weight: 700;
@@ -190,7 +209,7 @@ body {
 .main-1 {
     font-family: 'Karla', Helvetica, sans-serif;
     font-size: 1em;
-    color: var(--light_bio-text-clr);
+    color: var(--bio-text-clr);
     line-height: 1.6;
     margin-bottom: 1.5em;
     width: 40em;
@@ -242,20 +261,20 @@ li {
 }
 
 a, .faux-link {
-    color: var(--light_bio-text-clr);
+    color: var(--bio-text-clr);
     text-decoration: none;
-    border: 1px bottom --light_bio-text-clr;
+    border: 1px bottom var(--bio-text-clr);
     transition: 200ms ease-in all;
 }
 
 a:hover, .faux-link:hover {
-    color:  var(--light_link-clr);
-    border-color:  var(--light_link-clr);
+    color:  var(--link-hvr-bg-clr);
+    border-color:  var(--link-hvr-bg-clr);
 }
 
 a:focus, .faux-link:focus {
-    background-color: var(--light_link-clr);
-    color: var(--light_link-hvrtxt-clr);
+    background-color: var(--link-hvr-bg-clr);
+    color: var(--link-hvr-txt-clr);
     outline: none;
 }
 
@@ -299,111 +318,56 @@ a:focus, .faux-link:focus {
 
 
 /* Styles for users who prefer dark mode at the OS level */
-
+/* defaults to dark theme */
+/* 
 @media (prefers-color-scheme: dark) {
-    /* defaults to dark theme */
+
     body { 
-      color: var(--dark_text-clr);
-      background-color: var(--dark_bg-clr);
+      color: var(--text-clr);
+      background-color: var(--bg-clr);
     }
 
     .main-1 {
-        color: var(--dark_bio-text-clr);
+        color: var(--bio-text-clr);
     }
 
     a, .faux-link {
-        color: var(--dark_link-clr);
+        color: var(--link-clr);
         text-decoration: none;
-        border: 1px bottom --dark_link-clr;
+        border: 1px bottom --link-clr;
         transition: 200ms ease-in all;
     
     }
     
     a:hover, .faux-link:hover {
-        color:  var(--dark_link-hvr-clr);
-        border-color:  var(--dark_link-hvr-clr);
+        color:  var(--link-hvr-clr);
+        border-color:  var(--link-hvr-clr);
     }
 
     .subtitle {
-        color:  var(--dark_link-hvr-clr);
+        color:  var(--link-hvr-clr);
     }
     
     a:focus, .faux-link:focus {
-        background-color: var(--dark_link-hvr-clr);
-        color: var(--dark_link-hvrtxt-clr) ;
+        background-color: var(--link-hvr-clr);
+        color: var(--link-hvrtxt-clr) ;
         outline: none;
     }
 
     .header-bar {
-        background-color: var(--dark_geo-clr);
+        background-color: var(--geo-clr);
     }
 
     .illo {
         opacity: .9;
     }
 
-    /*geo*/
     
     .horizontal-line, vertical-line, .diagonal-line {
-        border-bottom: 1px solid var(--dark_geo-clr);
+        border-bottom: 1px solid var(--geo-clr);
     }
     
     .circle {  
-        border: 1px solid var(--dark_geo-clr);
+        border: 1px solid var(--geo-clr);
   }
-}
-
-
-
-/* RESET CSS */
-
-  /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+} */
