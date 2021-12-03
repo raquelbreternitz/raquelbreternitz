@@ -12,18 +12,21 @@ body {
 
 /*color tokens*/
 --white: #fff;
---black: #020202;
+--dark: #262d47;
 --gray: rgb(80, 85, 90, .7);
 --red: #d0554a;
 --yellow: #fcdb1e;
+--purple: #5857f0;
+--lavender: #9493ff;
 
 
 --bg-clr: var(--white);
---text-clr: var(--black);
+--text-clr: var(--dark);
 --bio-text-clr: var(--gray);
---btn-bg-clr: var(--gray);
---btn-hvr-bg-clr: var(--red);
---btn-txt-clr: var(--white);
+
+--bulb: var(--yellow);
+--bulb-stroke: var(--dark);
+
 --subtitle-clr: var(--red);
 --geo-clr: var(--yellow);
 --link-clr:var(--red);
@@ -41,16 +44,16 @@ body {
 
 body.dark-mode {
 --white: rgba(255,255,255, .8);
----black: rgba(10,10,20, .95);
+---dark: rgba(10,10,20, .95);
 --gray: rgba(205, 209, 231, 0.7);
 --red: #db7970;
 --yellow: rgba(255, 217, 0, 0.9);
 
---bg-clr: var(--black);
+--bg-clr: var(--dark);
 --text-clr: var(--white);
 
---btn-bg-clr: var(--white);
---btn-txt-clr: var(--black);
+--bulb: var(--purple);
+--bulb-stroke: var(--white);
 }
 
 /* COMPOSITION */ 
@@ -62,31 +65,79 @@ body {
     letter-spacing: .02em;
     color: var(--text-clr);
     background-color: var(--bg-clr);
+    transition: background-color 1s ease-out;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50em;
+    height: 5em;
+    margin: 0 auto;
+    padding: 0;
 }
 
 button {
-    background-color: var(--btn-bg-clr);
-    border-radius: .2em;
-    padding: .5em .7em;
-    font-family: var(--sans);
-    font-weight: 700;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    color: var(--btn-txt-clr);
-    border: 1px solid transparent;
+    background-color: transparent;
+    width: 4em;
+    border: none;
     outline: none;
     text-align: center;
-    display: inline-block;
     transition-duration: 0.3s;
 }
 
-button:hover, button:focus {
-    background-color: var(--btn-hvr-bg-clr);
-    box-shadow: 2px 3px 8px 0px rgb(0 0 0 / 20%);
+.bulb-text {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: .74em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 6em;
+    height: 4em;
+    fill: var(--bulb-stroke);
+    position: relative;
+    left: -1.3em;
+    top: -2.2em;
 }
 
-.toggle-theme {
-    margin: 1em 0;
+.page-title {
+    font-size: .75em;
+    font-family: var(--sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-end;
+}
+
+.bulb-boi {
+    will-change: transform;
+    transition: transform 450ms;
+    z-index: -1;
+}
+
+.toggle-theme:hover, .toggle-theme:focus {
+    transform: translateY(-5px);
+    
+}
+
+.toggle-theme:hover #bulb-2, .toggle-theme:focus #bulb-2 {
+    fill: var(--lavender);
+}
+
+#bulb {
+    fill: var(--bulb);
+    stroke-width: 3px;
+    stroke: var(--bulb-stroke);
+}
+
+#string {
+    stroke-width: 4px;
+    stroke: var(--bulb-stroke);
+    z-index: -1;
+}
+
+#bulb-top {
+    fill: var(--bulb-stroke);
 }
 
 .container {
@@ -101,6 +152,8 @@ button:hover, button:focus {
     width: 100%;
     height: .5em;
     background-color: var(--geo-clr);
+    z-index: 1;
+    position: sticky;
 }
 
 
@@ -145,7 +198,7 @@ button:hover, button:focus {
 .geo {
     position: relative;
     margin: auto;
-    top: 240px;
+    top: 172px;
     left: -362px;
     height: 100px;
     width: 300px;
@@ -198,14 +251,6 @@ button:hover, button:focus {
 
 /* TYPOGRAPHY */
 
-
-.page-title {
-    font-size: .75em;
-    font-family: var(--sans);
-    font-weight: 700;
-    text-transform: uppercase;
-    /*margin-bottom: 3em;*/
-}
 
 .page-title::before {
     content: "\2740";
@@ -349,59 +394,3 @@ a:focus, .faux-link:focus {
         .artie:hover img, .artie:focus img {
             top: calc(100% + 1.25em);
         }    }
-
-
-/* Styles for users who prefer dark mode at the OS level */
-/* defaults to dark theme */
-/* 
-@media (prefers-color-scheme: dark) {
-
-    body { 
-      color: var(--text-clr);
-      background-color: var(--bg-clr);
-    }
-
-    .main-1 {
-        color: var(--bio-text-clr);
-    }
-
-    a, .faux-link {
-        color: var(--link-clr);
-        text-decoration: none;
-        border: 1px bottom --link-clr;
-        transition: 200ms ease-in all;
-    
-    }
-    
-    a:hover, .faux-link:hover {
-        color:  var(--link-hvr-clr);
-        border-color:  var(--link-hvr-clr);
-    }
-
-    .subtitle {
-        color:  var(--link-hvr-clr);
-    }
-    
-    a:focus, .faux-link:focus {
-        background-color: var(--link-hvr-clr);
-        color: var(--link-hvrtxt-clr) ;
-        outline: none;
-    }
-
-    .header-bar {
-        background-color: var(--geo-clr);
-    }
-
-    .illo {
-        opacity: .9;
-    }
-
-    
-    .horizontal-line, vertical-line, .diagonal-line {
-        border-bottom: 1px solid var(--geo-clr);
-    }
-    
-    .circle {  
-        border: 1px solid var(--geo-clr);
-  }
-} */

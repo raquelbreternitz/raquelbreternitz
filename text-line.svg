@@ -1,0 +1,7 @@
+                <svg viewBox="0 0 4em 4em" id="bulb-text" class="bulb-text">
+                    <path id="curve" d="M.16,0c-2.49,25.62,24,42,47.92,31.76" fill="none"/>
+                    <text width="4em">
+                        <textPath xlink:href="#curve">lights on
+                        </textPath>
+                    </text>
+                </svg>
