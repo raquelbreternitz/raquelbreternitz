@@ -21,7 +21,7 @@ body {
 
 --white: #fff;
 --light: #E5E5E5;
---dark: black;
+--dark: rgb(12, 12, 12);
 --gray: var(--light);
 --red: #BA4512;
 --yellow: #F9DE53;
@@ -54,12 +54,12 @@ body.dark-mode {
 --white: rgba(255,255,255, .8);
 ---dark: rgba(10,10,20, .95);
 --gray: rgba(205, 209, 231, 0.7);
-/* --red: #db7970; */
+--red: #db7970;
 --yellow: rgba(255, 217, 0, 0.9);
 
 --bg-clr: var(--dark);
 --text-clr: var(--white);
-
+--link-hvr-txt-clr: var(---dark);
 --bulb: var(--red);
 --bulb-stroke: var(--white);
 }
@@ -133,9 +133,9 @@ button {
 
 }
 
-.toggle-theme:hover #bulb-2, .toggle-theme:focus #bulb-2 {
-    fill: var(--lavender);
-}
+/* .toggle-theme:hover #bulb-2, .toggle-theme:focus #bulb-2 {
+    fill: var(--light);
+} */
 
 #bulb {
     fill: var(--bulb);
@@ -334,6 +334,7 @@ button {
     letter-spacing: .05em;
     margin-right: 20px;
     line-height: 1.4;
+    padding: .2em 0;
     transition: ease-in 200ms;
 }
 
@@ -348,24 +349,20 @@ li {
    margin: 20px;
 }
 
-a, .faux-link {
+a, .main-2 a, .faux-link {
     color: var(--bio-text-clr);
     text-decoration: none;
     border: 1px bottom var(--bio-text-clr);
+    padding: 0 0.2em 0;
     transition: 200ms ease-in all;
 }
 
-/* a:hover, .faux-link:hover {
-    color:  var(--link-hvr-bg-clr);
-    border-color:  var(--link-hvr-bg-clr);
-    padding: 0 0.3em 0;
-} */
-
 a:hover, .faux-link:hover, a:focus, .faux-link:focus {
     background-color: var(--link-hvr-bg-clr);
-    color: var(--link-hvr-txt-clr);
+    border-color:  var(--link-hvr-bg-clr);
+    color: var(--link-hvr-txt-clr);    
     outline: none;
-    padding: 0 0.3em 0;
+
 }
 
 /* MEDIA QUERIES */
