@@ -11,18 +11,26 @@
 body {
 
 /*color tokens*/
---white: #fff;
+/* --white: #fff;
 --dark: #262d47;
 --gray: rgb(80, 85, 90, .7);
 --red: #d0554a;
 --yellow: #fcdb1e;
 --purple: #5857f0;
---lavender: #9493ff;
+--lavender: #9493ff; */
 
+--white: #fff;
+--light: #E5E5E5;
+--dark: black;
+--gray: var(--light);
+--red: #BA4512;
+--yellow: #F9DE53;
+--purple: #5857f0;
+--lavender: #9493ff;
 
 --bg-clr: var(--white);
 --text-clr: var(--dark);
---bio-text-clr: var(--gray);
+--bio-text-clr: var(--red);
 
 --bulb: var(--yellow);
 --bulb-stroke: var(--dark);
@@ -46,13 +54,13 @@ body.dark-mode {
 --white: rgba(255,255,255, .8);
 ---dark: rgba(10,10,20, .95);
 --gray: rgba(205, 209, 231, 0.7);
---red: #db7970;
+/* --red: #db7970; */
 --yellow: rgba(255, 217, 0, 0.9);
 
 --bg-clr: var(--dark);
 --text-clr: var(--white);
 
---bulb: var(--purple);
+--bulb: var(--red);
 --bulb-stroke: var(--white);
 }
 
@@ -347,15 +355,17 @@ a, .faux-link {
     transition: 200ms ease-in all;
 }
 
-a:hover, .faux-link:hover {
+/* a:hover, .faux-link:hover {
     color:  var(--link-hvr-bg-clr);
     border-color:  var(--link-hvr-bg-clr);
-}
+    padding: 0 0.3em 0;
+} */
 
-a:focus, .faux-link:focus {
+a:hover, .faux-link:hover, a:focus, .faux-link:focus {
     background-color: var(--link-hvr-bg-clr);
     color: var(--link-hvr-txt-clr);
     outline: none;
+    padding: 0 0.3em 0;
 }
 
 /* MEDIA QUERIES */

@@ -10,12 +10,12 @@ toggle.addEventListener('click', function(e) {
     document.body.classList.remove('dark-mode');
     // Reverse logic on the button text, so that users can turn
     // the theme back on:
-    //toggle.innerText = 'lights on';
-    document.getElementById("curve-text").textContent = "lights on";
-  } else {
-    document.body.classList.add('dark-mode');
     //toggle.innerText = 'lights off';
     document.getElementById("curve-text").textContent = "lights off";
+  } else {
+    document.body.classList.add('dark-mode');
+    //toggle.innerText = 'lights on';
+    document.getElementById("curve-text").textContent = "lights on";
   }
 });
 
