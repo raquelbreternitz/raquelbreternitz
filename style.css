@@ -21,6 +21,7 @@ body {
 
 --white: #fff;
 --light: #E5E5E5;
+--tan: #E4E0D3;
 --dark: rgb(12, 12, 12);
 --gray: var(--light);
 --red: #BA4512;
@@ -28,7 +29,7 @@ body {
 --purple: #5857f0;
 --lavender: #9493ff;
 
---bg-clr: var(--white);
+--bg-clr: var(--tan);
 --text-clr: var(--dark);
 --bio-text-clr: var(--red);
 
@@ -36,12 +37,12 @@ body {
 --bulb-stroke: var(--dark);
 
 --subtitle-clr: var(--red);
---geo-clr: var(--yellow);
+--geo-clr: var(--white);
 --link-clr:var(--red);
 --link-hvr-bg-clr: var(--red);
 --link-hvr-txt-clr: var(--white);
 
---geo-border: 1px solid var(--geo-clr);
+--geo-border: 2px solid var(--geo-clr);
 
 /*font tokens*/
 --serif: freight-text-pro, Georgia, 'Times New Roman', Times, serif;;
@@ -58,7 +59,8 @@ body.dark-mode {
 --yellow: rgba(255, 217, 0, 0.9);
 
 --bg-clr: var(--dark);
---text-clr: var(--white);
+--geo-clr: var(--yellow);
+--text-clr: var(--tan);
 --link-hvr-txt-clr: var(---dark);
 --bulb: var(--red);
 --bulb-stroke: var(--white);
@@ -297,7 +299,6 @@ button {
 .main-1 {
     font-family: 'Karla', Helvetica, sans-serif;
     font-size: 1em;
-    color: var(--bio-text-clr);
     line-height: 1.6;
     margin-bottom: 1.5em;
     width: 40em;
