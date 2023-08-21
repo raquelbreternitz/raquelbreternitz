@@ -166,6 +166,58 @@ body {
   padding-bottom: 24px;
 }
 
+/*DARKMODE SWITCHER*/
+button {
+    background-color: transparent;
+    width: 4em;
+    border: none;
+    outline: none;
+    text-align: center;
+    transition-duration: 0.3s;
+    z-index: 1;
+}
+
+.bulb-text {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: .74em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 6em;
+    height: 4em;
+    fill: var(--bulb-stroke);
+    position: relative;
+    left: -1.3em;
+    top: -2.2em;
+}
+.bulb-boi {
+    will-change: transform;
+    transition: transform 450ms;
+    z-index: -1;
+}
+
+.toggle-theme:hover,
+.toggle-theme:focus {
+    transform: translateY(-5px);
+
+}
+
+#bulb {
+    fill: var(--bulb);
+    stroke-width: 3px;
+    stroke: var(--bulb-stroke);
+}
+
+#string {
+    stroke-width: 4px;
+    stroke: var(--bulb-stroke);
+    z-index: -1;
+}
+
+#bulb-top {
+    fill: var(--bulb-stroke);
+}
+
 /*LINKS*/
 
 .links {
