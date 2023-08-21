@@ -44,7 +44,7 @@ body {
   --link-hvr-bg-clr: var(--dark);
   --link-hvr-txt-clr: var(--white);
 
-  --geo-border: 1px solid var(--geo-clr);
+  --geo-border: 1px solid var(--accent-clr);
   /* --geo-transition: transition: border-color 300ms ease; */
 
   /*font tokens*/
@@ -103,13 +103,15 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 2fr;
+  /* grid-template-rows: 1fr 2fr; */
   grid-column-gap: 52px;
   grid-row-gap: 16px;
+  align-items: center;
 }
 
 .div1 {
   grid-area: 1 / 1 / 2 / 2;
+  align-self: start;
 }
 .div2 {
   grid-area: 1 / 2 / 2 / 3;
@@ -122,12 +124,12 @@ body {
 }
 
 .illo {
-  width: 100%;
+  width: 12vw;
 }
 
 .raquel-b {
   font-family: var(--display);
-  font-size: 5em;
+  font-size: 6vw;
   line-height: 0.8;
   margin-bottom: 0.38em;
 }
@@ -225,11 +227,73 @@ button {
     fill: var(--bulb-stroke);
 }
 
-/*LINKS*/
+/* GEOMETRIC */
 
-.links {
-  padding: 0 0 10px 220px;
-  margin-bottom: 0.25em;
+.geo-container {
+    position: relative;
+    display: inline;
+}
+
+.geo {
+    position: relative;
+    margin: auto;
+    top: 415px;
+    left: 25px;
+    height: 100px;
+    width: 300px;
+    display: block;
+    z-index: -1;
+}
+
+.geo-lines {
+    background-color: transparent;
+    border-bottom: var(--geo-border);
+    border-right: 1px solid transparent;
+    transition: var(--geo-transition);
+
+}
+
+.horizontal-line {
+    position: absolute;
+    width: 900px;
+    height: 2px;
+    top: 10%;
+    left: 5%;
+}
+
+.vertical-line {
+    position: absolute;
+    width: 250px;
+    height: 2px;
+    top: 100%;
+    left: -4.5%;
+    transform: rotate(90deg);
+}
+
+.diagonal-line {
+    position: absolute;
+    width: 200px;
+    height: 2px;
+    top: 80%;
+    left: 27.5%;
+    transform: rotate(45deg);
+}
+
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 12%;
+    left: 37%;
+    background: transparent;
+    border: var(--geo-border);
+    border-radius: 50%;
+    transition: var(--geo-transition);
+}
+
+LINKS
+
+ul, .links {
   display: flex;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
@@ -245,21 +309,12 @@ button {
 
 .link {
   font-family: var(--sans);
-  font-size: 0.825em;
   letter-spacing: 0.05em;
   margin-right: 20px;
   line-height: 1.4;
   padding: 0.2em 0;
   transition: ease-in 200ms;
 }
-
-.link-header {
-  font-weight: 700;
-  margin-right: 20px;
-  line-height: 1.4;
-  transition: ease-in 200ms;
-}
-
 li {
   margin: 20px;
 }
