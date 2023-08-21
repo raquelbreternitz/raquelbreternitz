@@ -202,14 +202,11 @@ button {
     left: -1.3em;
     top: -2.2em;
 }
-.bulb-boi {
-    will-change: transform;
-    transition: transform 450ms;
-    z-index: -1;
-}
 
 .toggle-theme {
+    will-change: transform;
     transition: color 300ms ease-in-out;
+    transition: transform 450ms;
 }
 
 .toggle-theme:hover,
