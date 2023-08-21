@@ -1,26 +1,30 @@
 //TOGGLE THEME
 
-let toggle = document.querySelector('.toggle-theme');
+let toggle = document.querySelector(".toggle-theme");
+let bulb = document.querySelector("#bulb");
 
-toggle.addEventListener('click', function(e) {
+
+toggle.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (document.body.classList.contains('dark-mode')) {
+  if (document.body.classList.contains("dark-mode")) {
     // Turning the theme off:
-    document.body.classList.remove('dark-mode');
+    document.body.classList.remove("dark-mode");
     // Reverse logic on the button text, so that users can turn
     // the theme back on:
     //toggle.innerText = 'lights off';
     document.getElementById("curve-text").textContent = "lights off";
   } else {
-    document.body.classList.add('dark-mode');
+    document.body.classList.add("dark-mode");
     //toggle.innerText = 'lights on';
     document.getElementById("curve-text").textContent = "lights on";
   }
 });
 
 //DETECT PREFERENCE
-if (window.matchMedia && 
-  window.matchMedia('(prefers-color-scheme: dark)').matches) {
-document.body.classList.add('dark-mode');
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+  document.body.classList.add("dark-mode");
 }
