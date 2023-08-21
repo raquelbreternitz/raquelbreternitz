@@ -167,6 +167,13 @@ body {
 }
 
 /*DARKMODE SWITCHER*/
+
+.theme-toggle {
+position: absolute;
+top: 0;
+right: 25%;
+}
+
 button {
     background-color: transparent;
     width: 4em;
