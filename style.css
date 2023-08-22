@@ -34,17 +34,21 @@ body {
 
   --purple: #5857f0;
   --lavender: #9493ff;
+  --yellow: #efff63;
 
   --bg-clr: var(--light);
   --text-clr: var(--dark);
 
-  --bulb: var(--accent-clr);
-  --bulb-hover: var(--white);
+  --bulb: var(--white);
+  --bulb-hover: var(--accent-clr);
   --bulb-stroke: var(--dark);
 
   --link-clr: var(--dark);
   --link-hvr-bg-clr: var(--dark);
   --link-hvr-txt-clr: var(--white);
+
+  --glow-clr: var(--yellow);
+  --glow-hover-clr: var(--white)
 
   --geo-border: 1px solid var(--accent-clr);
   /* --geo-transition: transition: border-color 300ms ease; */
@@ -66,6 +70,10 @@ body.dark-mode {
   --link-clr: var(--accent-clr);
   --link-hvr-bg-clr: var(--light);
   --link-hvr-txt-clr: var(--dark);
+
+
+  --glow-clr: var(--black);
+  --glow-hover-clr: var(--lavender);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -211,18 +219,13 @@ button {
     transition: 300ms ease-in;
 }
 
+.toggle-theme #bulb-2 {
+  filter: drop-shadow(0px 0px 10px var(--glow-clr));
+}
+
 .toggle-theme:hover #bulb-2,
 .toggle-theme:focus #bulb-2{
-  box-shadow: inset 0 0 50px #fff,      /* inner white */
-  inset 20px 0 80px #f0f,   /* inner left magenta short */
-  inset -20px 0 80px #0ff,  /* inner right cyan short */
-  inset 20px 0 300px #f0f,  /* inner left magenta broad */
-  inset -20px 0 300px #0ff, /* inner right cyan broad */
-  0 0 50px #fff,            /* outer white */
-  -10px 0 80px #f0f,        /* outer left magenta */
-  10px 0 80px #0ff;         /* outer right cyan */
-
-  filter: drop-shadow(0px 0px 10px rgb(255, 255, 124));
+  filter: drop-shadow(0px 0px 10px var(--glow-hover-clr));
 }
 
 
