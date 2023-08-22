@@ -84,10 +84,10 @@ body {
 }
 
 .container {
-  margin: 0 auto;
   width: 50%;
-  padding: 44px;
-  height: 100vh;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2em 0;
 }
 
 .page-title {
@@ -107,15 +107,13 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  /* grid-template-rows: 1fr 2fr; */
-  grid-column-gap: 52px;
-  grid-row-gap: 16px;
-  align-items: center;
+  grid-column-gap: 5rem;
+  grid-row-gap: 1rem;
+  justify-content: center;
 }
 
 .div1 {
   grid-area: 1 / 1 / 2 / 2;
-  align-self: start;
 }
 .div2 {
   grid-area: 1 / 2 / 2 / 3;
@@ -157,7 +155,7 @@ body {
 
 .sub-head {
   font-family: var(--serif);
-  font-size: 1.4em;
+  font-size: 1.6vw;
   line-height: 1.4;
   font-weight: 200;
   font-style: italic;
@@ -205,19 +203,32 @@ button {
 
 .toggle-theme {
     will-change: transform;
-    transition: color 300ms ease-in-out;
-    transition: transform 450ms;
 }
 
 .toggle-theme:hover,
 .toggle-theme:focus {
     transform: translateY(-5px);
+    transition: 300ms ease-in;
+}
+
+.toggle-theme:hover #bulb-2,
+.toggle-theme:focus #bulb-2{
+  box-shadow: inset 0 0 50px #fff,      /* inner white */
+  inset 20px 0 80px #f0f,   /* inner left magenta short */
+  inset -20px 0 80px #0ff,  /* inner right cyan short */
+  inset 20px 0 300px #f0f,  /* inner left magenta broad */
+  inset -20px 0 300px #0ff, /* inner right cyan broad */
+  0 0 50px #fff,            /* outer white */
+  -10px 0 80px #f0f,        /* outer left magenta */
+  10px 0 80px #0ff;         /* outer right cyan */
+
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 124));
 }
 
 
 .toggle-theme:hover #bulb,
 .toggle-theme:focus #bulb {
-fill: var(--bulb-hover);
+  fill: var(--bulb-hover);
 }
 
 #bulb {
@@ -372,4 +383,41 @@ a:focus,
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+@media (max-width: 900px) {
+
+.grid {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.div1 {
+  grid-area: auto;
+}
+.div2 {
+  grid-area: auto;
+}
+.div3 {
+  grid-area: auto;
+}
+.div4 {
+  grid-area: auto;
+}
+
+.illo {
+  width: 50%;
+}
+
+.sub-head {
+  font-size: 1.2em;
+}
+
+.links {
+  flex-wrap: wrap;
+}
+
 }
