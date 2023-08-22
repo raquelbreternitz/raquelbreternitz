@@ -219,8 +219,7 @@ button {
     will-change: transform;
 }
 
-.toggle-theme:hover,
-.toggle-theme:focus {
+.toggle-theme:hover {
     transform: translateY(-5px);
     transition: 300ms ease-in;
 }
@@ -229,16 +228,23 @@ button {
   filter: drop-shadow(0px 0px 10px var(--glow-clr));
 }
 
-.toggle-theme:hover #bulb-2,
-.toggle-theme:focus #bulb-2{
+.toggle-theme:hover #bulb-2 {
   filter: drop-shadow(0px 0px 10px var(--glow-hover-clr));
-}
-
-
-.toggle-theme:hover #bulb,
-.toggle-theme:focus #bulb {
   fill: var(--bulb-hover);
+  transition: 300ms ease-in;
 }
+
+.toggle-theme:focus .bulb-text {
+  filter: drop-shadow(0px 0px 10px var(--text-clr));
+}
+
+.toggle-theme:active #bulb-2 {
+  filter: drop-shadow(0px 0px 20px var(--glow-hover-clr));
+  fill: var(--bulb-hover);
+  transition: 100ms ease-in;
+}
+
+
 
 #bulb {
     fill: var(--bulb);
