@@ -51,7 +51,7 @@ body {
   --glow-hover-clr: var(--white)
 
   --geo-border: 1px solid var(--accent-clr);
-  /* --geo-transition: transition: border-color 300ms ease; */
+  --geo-transition: transition: border-color 300ms ease;
 
   /*font tokens*/
   --serif: "Freight Text Pro", Georgia, "Times New Roman", Times, serif;
@@ -217,7 +217,8 @@ button {
 
 .toggle-theme {
     will-change: transform;
-    transition: 300ms ease-in-out;
+    transition: 250ms ease-in-out;
+    position: relative;
 }
 
 .toggle-theme:hover {
@@ -237,31 +238,19 @@ button {
   display: block;
 }
 
+/* 
+.toggle-theme:active {
+fill: var(--bulb-hover)
+} */
 
-.toggle-theme:active #bulb-2 {
-  animation-name: bounce;
-  animation-fill-mode: both;
-  animation-duration: 300ms;
-}
-
-@keyframes bounce {
-  0% {
-    opacity: 0;
-    transform: translateY(-1000px) rotate(-45deg);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translateY(30px) rotate(-45deg);
-  }
-
-  80% {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-
-  100% {
-    transform: translateY(0) rotate(-45deg);
-  }
+.toggle-theme::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
 }
 
 .bulb-text {
