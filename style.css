@@ -414,7 +414,7 @@ a:focus,
   margin: 5 auto;
 }
 
-/* @media (max-width: 1200px){
+@media (max-width: 1200px){
 
 .grid {
   max-width: 800px;
@@ -458,4 +458,4 @@ a:focus,
   flex-wrap: wrap;
 }
 
-} */
+}
