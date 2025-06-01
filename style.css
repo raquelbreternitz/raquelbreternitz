@@ -67,7 +67,7 @@ body.dark-mode {
     --bulb-hover: var(--dark);
     --bulb-stroke: var(--light);
 
-  --link-clr: var(--accent-clr);
+  --link-clr: white;
   --link-hvr-bg-clr: var(--light);
   --link-hvr-txt-clr: var(--dark);
 
