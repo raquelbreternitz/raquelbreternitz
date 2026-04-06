@@ -184,6 +184,10 @@ body {
   padding-bottom: 24px;
 }
 
+.footer {
+  margin: 2rem 0 4rem 0;
+}
+
 /*DARKMODE SWITCHER*/
 
 .theme-toggle {
